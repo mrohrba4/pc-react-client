@@ -9,6 +9,8 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import Landing from './components/Landing/Landing'
+import IndexItems from './components/Item/ShowItems'
 
 class App extends Component {
   constructor (props) {
@@ -41,6 +43,7 @@ class App extends Component {
 
     return (
       <Fragment>
+        {/* Nav Bar */}
         <Header user={user} />
         {msgAlerts.map(msgAlert => (
           <AutoDismissAlert
@@ -52,18 +55,30 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
+        {/* Signed out Landing */}
+        <Route exact path='/' render={() => (
+          <Landing />
+        )} />
         <main className="container">
+          {/* Sign Up */}
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+          {/* Sign In */}
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+          {/* Sign Out */}
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
+          {/* Change Password */}
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          {/* Show All Items */}
+          <AuthenticatedRoute user={user} path='/items' render={() => (
+            <IndexItems user={user} />
           )} />
         </main>
       </Fragment>

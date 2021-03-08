@@ -1,1 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
+
+.maingrid {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Dosis', sans-serif;
+}
+.titlegrid {
+  border: 1px solid black;
+  text-align: center;
+}
+.sigrid {
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 80%;
+  height: 90%;
+}
+.sicard {
+  width: 80%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.sugrid {
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 80%;
+  height: 90%;
+}
+.sucard {
+  width: 80%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.footgrid {
+  border: 1px solid black;
+}

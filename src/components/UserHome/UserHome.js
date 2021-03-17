@@ -8,7 +8,7 @@ const UserHome = () => (
   <Grid className="userhomemain">
     <Grid className="menugrid" item xs={3}>
       <p>Menu Grid</p>
-      <Button href='/#/items'>View Items</Button>
+      <Button variant="contained" href='/#/items'>View Items</Button>
     </Grid>
     <Grid className="userhomegrid" item xs={9}>
       <p>User Main Grid</p>

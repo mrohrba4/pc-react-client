@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
+// <Nav.Link href="#items">Show Items</Nav.Link>
+
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#items">Show Items</Nav.Link>
+    <Nav.Link href="#user">User</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>

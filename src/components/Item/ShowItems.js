@@ -21,12 +21,12 @@ class IndexItems extends Component {
   componentDidMount () {
     const { user } = this.props
     axios({
-      url: apiUrl + '/entries/',
+      url: apiUrl + '/items/',
       method: 'get',
       headers: {
         'Authorization': `Token ${user.token}`
       } })
-      .then(res => this.setState({ entries: res.data.entries }))
+      .then(res => this.setState({ items: res.data.items }))
       .catch(console.error)
   }
 

@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 
 const Landing = () => (
   // Main grid
-  <Grid className="maingrid" direction="row" justify="stretch" alignItems="stretch" container={true} spacing={3}>
+  <Grid className="maingrid" direction="row" justifycontent="stretch" alignItems="stretch" container={true} spacing={8}>
     {/* Title Grid */}
     <Grid className="titlegrid" item xs={12}>
       <h1>Welcome to PantryCheck</h1>

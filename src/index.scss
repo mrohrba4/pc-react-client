@@ -1,5 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 100%;
+}
 .maingrid {
   height: 100vh;
   width: 100vw;
@@ -39,4 +44,27 @@
 }
 .footgrid {
   border: 1px solid black;
+}
+.userhomemain {
+  height: 100vh;
+  // width: 100vw;
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.menugrid {
+  border: 1px solid black;
+  text-align: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: stretch;
+}
+.userhomegrid {
+  border: 1px solid black;
+  text-align: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: stretch;
 }

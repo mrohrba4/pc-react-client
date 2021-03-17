@@ -11,19 +11,23 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Landing from './components/Landing/Landing'
 import IndexItems from './components/Item/ShowItems'
+import UserHome from './components/UserHome/UserHome'
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
       user: null,
-      msgAlerts: []
+      msgAlerts: [],
+      isLoggedIn: false
     }
   }
 
   setUser = user => this.setState({ user })
 
   clearUser = () => this.setState({ user: null })
+
+  setLoggedIn = () => this.setState({ isLoggedIn: true })
 
   deleteAlert = (id) => {
     this.setState((state) => {
@@ -57,7 +61,7 @@ class App extends Component {
         ))}
         {/* Signed out Landing */}
         <Route exact path='/' render={() => (
-          <Landing />
+          <Landing/>
         )} />
         <main className="container">
           {/* Sign Up */}
@@ -66,7 +70,7 @@ class App extends Component {
           )} />
           {/* Sign In */}
           <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} isLoggedIn={true} />
           )} />
           {/* Sign Out */}
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
@@ -75,6 +79,10 @@ class App extends Component {
           {/* Change Password */}
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          {/* User Home */}
+          <AuthenticatedRoute user={user} path='/user' render={() => (
+            <UserHome user={user} />
           )} />
           {/* Show All Items */}
           <AuthenticatedRoute user={user} path='/items' render={() => (

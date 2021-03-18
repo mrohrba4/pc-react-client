@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import Landing from './components/Landing/Landing'
 import IndexItems from './components/Item/ShowItems'
 import UserHome from './components/UserHome/UserHome'
+import CreateItem from './components/Item/CreateItem'
 
 class App extends Component {
   constructor (props) {
@@ -87,6 +88,10 @@ class App extends Component {
           {/* Show All Items */}
           <AuthenticatedRoute user={user} path='/items' render={() => (
             <IndexItems user={user} />
+          )} />
+          {/* Add An Item */}
+          <AuthenticatedRoute user={user} path='/create-item' render={() => (
+            <CreateItem user={user} />
           )} />
         </main>
       </Fragment>

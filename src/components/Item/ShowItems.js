@@ -8,6 +8,7 @@ import Table from '@material-ui/core/Table'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
+import Button from '@material-ui/core/Button'
 
 class IndexItems extends Component {
   constructor (props) {
@@ -30,6 +31,17 @@ class IndexItems extends Component {
       .catch(console.error)
   }
 
+  handleRemove (id, event) {
+    const { user } = this.props
+    axios.delete(`${apiUrl}/items/${id}/`, {
+      headers: { 'Authorization': `Token ${user.token}` }
+    })
+      .then(res => {
+        const items = this.state.items.filter(item => item.id !== id)
+        this.setState({ items })
+      })
+  }
+
   render () {
     let itemsJsx
     const { items } = this.state
@@ -49,6 +61,7 @@ class IndexItems extends Component {
               quantity={item.quantity}
               description={item.description}
             />
+            <Button variant="contained" size="small" onClick={(event) => this.handleRemove(item.id, event)}>Remove</Button>
           </TableRow>
         </TableBody>
       ))
@@ -61,7 +74,7 @@ class IndexItems extends Component {
         justify="center"
         alignItems="stretch"
       >
-        <h2 className="itemtitle1">Your Items</h2>
+        <h2 className="showitemstitle1">Your Items</h2>
 
         <Table>
           <TableHead>

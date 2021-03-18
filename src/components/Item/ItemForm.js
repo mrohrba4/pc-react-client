@@ -43,13 +43,13 @@ const ItemForm = ({ handleSubmit, handleInputChange, item }) => (
           variant="outlined"
         />
       </Grid>
-      {/* "Item Type" */}
+      {/* "Item Description" */}
       <Grid item>
         <TextField className="idf"
           name="description"
           type="text"
           placeholder="Item Description"
-          value={item.type}
+          value={item.description}
           onChange={handleInputChange}
           variant="outlined"
         />
